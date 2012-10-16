@@ -1,0 +1,19 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Aliprantis \harvardand\ Border}{1994}{ab94}
+Aliprantis, C.~D. \harvardand\ Border, K.~C.  \harvardyearleft
+  1994\harvardyearright , {\em Infinite Dimensional Analysis}, Springer,
+  Berlin.
+
+\harvarditem[Arrow et~al.]{Arrow, Hurwicz \harvardand\ Uzawa}{1961}{ahu61}
+Arrow, K.~J., Hurwicz, L. \harvardand\ Uzawa, H.  \harvardyearleft
+  1961\harvardyearright , `Constraint qualifications in maximization problems',
+  {\em Naval Research Logistics Quarterly} {\bf 8},~175--191.
+
+\harvarditem{Maskin}{1985}{m85}
+Maskin, E.~S.  \harvardyearleft 1985\harvardyearright , The theory of
+  implementation in {N}ash equilibrium: a survey, {\em in} L.~Hurwicz,
+  D.~Schmeidler \harvardand\ H.~Sonnenschein, eds, `Social Goals and Social
+  Organization', Cambridge University Press, pp.~173--204.
+
+\end{thebibliography}
