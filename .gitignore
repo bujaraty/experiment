@@ -3,5 +3,6 @@ sh/obsolete/
 *~
 *.log
 *.eps
-
+*.aux
+*.dvi
 
