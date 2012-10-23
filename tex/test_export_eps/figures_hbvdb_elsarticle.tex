@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{graphics}
+\usepackage{pgf,pgfarrows,pgfnodes}
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{comment}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{trees}
+%\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{calc}
+
+\usetikzlibrary{external}
+\tikzexternalize
+\tikzset{external/system call={latex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"; dvips -o "\image".eps "\image".dvi}}
+
+
+
+\begin{document}
+
+
+
+\tikzset{guide lines/.style={red!20, very thin}}
+\tikzset{filtering minimum width/.style={minimum width=60mm}}
+
+
+
+\begin{tikzpicture}
+    [
+	scale=1,
+	terminal/.style={rectangle,rounded corners=2mm,very thick,draw=black!50,top color=white,font=\scriptsize},
+        IO text/.style={font=\scriptsize},
+        filtering text/.style={font=\tiny,purple!100},
+	DB/.style={shape aspect=0.25,cylinder,shape border rotate=90,draw,font=\scriptsize,top color=white},
+	200danes DB/.style={DB,blue!50!black!50,bottom color=blue!20!black!20},
+	1000genomes DB/.style={DB,text width=10mm,minimum width=12mm,minimum height=12mm,align=center},
+    ]
+
+%    \draw[step=1, guide lines] (-5.4,-3.1) grid (5.4,3.1);
+
+
+    \draw (-4,0) node [200danes DB,minimum width=12mm,minimum height=12mm] (200danes) {200danes};
+    \draw (1,2.5) node [terminal, filtering minimum width] (test_variants) {Test variants};
+    \draw (1,0) node [1000genomes DB, filtering minimum width, minimum height=22mm,bottom color=red!30,red!50!blue!50] (1000genomes) {};
+    \draw (1000genomes.north) [below,inner ysep=5mm,font=\scriptsize] node{1000 Genomes};
+    \draw (1000genomes.west) + (0.3,-0.4) node [1000genomes DB,right] (1000genomes_AFR) {African (AFR)};
+    \draw (1000genomes) + (0,-0.4) node [1000genomes DB] (1000genomes_ASN) {Asian (AFR)};
+    \draw (1000genomes.east)  + (-0.3,-0.4)node [1000genomes DB,left] (1000genomes_ALL) {All};
+    \draw (1,-2.5) node [200danes DB, filtering minimum width] (hbvdb) {HBVDB};
+
+    \draw [->, thick] (200danes) to [bend left=45] node[pos=0.2,auto,swap,IO text] {input} node[pos=0.2,auto,IO text] {10\%}  (test_variants.west);
+    \draw [->, thick] (200danes) to [bend right=45] node[pos=0.2,auto,swap,IO text] {90\%}  node[pos=0.2,auto,IO text] {create DB} (hbvdb.west);
+
+    \draw [->] (test_variants) -- (1000genomes_AFR.north);
+    \draw [->] (test_variants) -- (1000genomes_ASN.north) node[pos=0.3,filtering text] {253,577 SNPs};
+    \draw [->] (test_variants) -- (1000genomes_ALL.north);
+
+    \coordinate (hbvdb_top_west) at ($(hbvdb.top)-(1000genomes_ASN)+(1000genomes_AFR)$);
+    \coordinate (hbvdb_top_east) at ($(hbvdb.top)+(1000genomes_ASN)-(1000genomes_AFR)$);
+    \draw [->] (1000genomes_AFR.south) -- (hbvdb_top_west) node[pos=0.5,filtering text,left] {109,450 SNPs};
+    \draw [->] (1000genomes_ASN)       -- (hbvdb.top) node[pos=0.5,filtering text] {124,556 SNPs};
+    \draw [->] (1000genomes_ALL.south) -- (hbvdb_top_east) node[pos=0.5,filtering text,right] {96,243 SNPs};
+
+    \coordinate (hbvdb_south_west) at ($(hbvdb.south)-(1000genomes_ASN)+(1000genomes_AFR)$);
+    \coordinate (hbvdb_south_east) at ($(hbvdb.south)+(1000genomes_ASN)-(1000genomes_AFR)$);
+
+    \coordinate (output_south_west) at ($(hbvdb.south)-(1000genomes_ASN)+(1000genomes_AFR)-(0,1)$);
+    \coordinate (output_south)      at ($(hbvdb.south)-(0,1)$);
+    \coordinate (output_south_east) at ($(hbvdb.south)+(1000genomes_ASN)-(1000genomes_AFR)-(0,1)$);
+
+    \draw [->] (hbvdb_south_west) -- (output_south_west) node[pos=0.5,filtering text,left] {80,210 SNPs};
+    \draw [->] (hbvdb.south)      -- (output_south) node[pos=0.5,filtering text] {81,553 SNPs};
+    \draw [->] (hbvdb_south_east) -- (output_south_east) node[pos=0.5,filtering text,right] {76,966 SNPs};
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+    [
+	terminal/.style={rectangle,rounded corners=2mm,very thick,draw=red!50!black!50,top color=white,bottom color=red!50!black!20,font=\scriptsize},
+        IO text/.style={font=\scriptsize},
+	DB/.style={shape aspect=0.25,cylinder,shape border rotate=90,draw,font=\scriptsize,top color=white},
+	200danes DB/.style={DB,blue!50!black!50,bottom color=blue!20!black!20},
+	1000genomes DB/.style={DB,red!50!blue!50,bottom color=red!30,minimum height=5mm},
+    ]
+
+    \draw[step=1, guide lines] (-5.4,-3.1) grid (5.4,3.1);
+
+
+    \draw (-2,0) node [200danes DB] (200danes) {200danes};
+    \draw (1,2) node [terminal] (test_variants) {Test variants};
+    \draw (1,0) node [1000genomes DB] (1000genomes) {1000 \\\\\\\\\\\\\ Genomes};
+    \draw (-2,2) node [1000genomes DB] (abc) {1000 \\\\\\\\\\\\\ Genomes};
+    \draw (1,-2) node [200danes DB] (hbvdb) {HBVDB};
+
+
+\draw [->, thick] (200danes) to [bend left=45] node[auto,swap,IO text] {input} node[auto,IO text] {10\%}  (test_variants.west);
+\draw [->, thick] (200danes) to [bend right=45] node[auto,swap,IO text] {90\%}  node[auto,IO text] {create DB} (hbvdb.west);
+\draw [->, thick] (test_variants) -- node[right,IO text] {192,864 SNPs}  (1000genomes);
+\draw [->, thick] (1000genomes) -- node[right,IO text] {53,872 SNPs left}  (hbvdb);
+\draw [->, thick] (hbvdb) -- node[right,IO text] {48,757 SNPs left}  (1,-3);
+\draw [red, thick] (1.55,-0.9) ellipse (0.5 and 0.25);
+\draw [red, thick] (1.55,-2.64) ellipse (0.5 and 0.25);
+\draw [->,red, thick] (200danes) -- node[auto,IO text] {subset}  (1000genomes);
+\end{tikzpicture}
+
+
+
+\end{document}
