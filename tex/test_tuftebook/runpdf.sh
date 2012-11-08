@@ -1,0 +1,3 @@
+latex test_tuftebook
+dvipdfm test_tuftebook
+evince test_tuftebook.pdf

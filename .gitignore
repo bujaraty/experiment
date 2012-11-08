@@ -5,4 +5,7 @@ sh/obsolete/
 *.eps
 *.aux
 *.dvi
+*.rm
+*.ps
+*.out
 
