@@ -1,0 +1,36 @@
+\documentclass{test_latex_class} 
+\usepackage{lipsum}
+
+% basic definition of the minutes environ
+\setdate {1958−Oct−12}
+\setcommittee { T o t a l l y T r i v i a l M a t t e r s Committee }
+
+\title{my title}	
+
+\begin{document}
+\maketitle
+\begin{minutes}
+    .. stuff like the Business environment ..
+    \begin{business}
+    \item \lipsum[7]
+    \item \lipsum[8]
+    \end{business}
+
+\end{minutes}
+
+\section{first section}
+\lipsum[1]
+
+\lipsum[2]
+
+\section{second section}
+\lipsum[3]
+
+\lipsum[4]
+
+\section{second section}
+\lipsum[5]
+
+\lipsum[6]
+
+\end{document}
