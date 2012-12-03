@@ -1,0 +1,17 @@
+setup.cfg
+pip-egg-info/PyVCF.egg-info/PKG-INFO
+pip-egg-info/PyVCF.egg-info/SOURCES.txt
+pip-egg-info/PyVCF.egg-info/dependency_links.txt
+pip-egg-info/PyVCF.egg-info/entry_points.txt
+pip-egg-info/PyVCF.egg-info/requires.txt
+pip-egg-info/PyVCF.egg-info/top_level.txt
+scripts/vcf_filter.py
+scripts/vcf_melt
+vcf/__init__.py
+vcf/filters.py
+vcf/model.py
+vcf/parser.py
+vcf/utils.py
+vcf/test/__init__.py
+vcf/test/prof.py
+vcf/test/test_vcf.py
