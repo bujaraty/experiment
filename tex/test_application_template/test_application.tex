@@ -1,0 +1,57 @@
+\documentclass{application} 
+\usepackage{lipsum}
+\usepackage[english]{babel}
+%\usepackage[T1]{fontenc}
+%\usepackage{uarial}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{fontspec}
+\setmainfont{Arial}
+%\usepackage{txfonts}
+%\usepackage[T1]{fontenc}
+%\usepackage{uarial}
+
+\ApplicationContent{MyContent}
+\ApplicationColor{Blue}
+\ApplicationStyle{Banking}
+%\ApplicationStyle{Classic}
+\renewcommand*{\subcontentfont}{}
+
+\begin{document}
+
+%\makecasualplaintitle{Curriculum Vitae(Jessada Thutkawkorapin)}{}{}
+\makecenterplaincvtitle{Curriculum Vitae}
+
+\SectionPersonalInfo
+\SectionProfessionalExperience
+\SectionEducation
+\SectionMasterThesis
+\SectionPublication
+\SectionReferees
+
+\recipient{Wellcome Trust 4-year PhD programme in \\ Mathematical Genomics and Medicine}{Department of Applied Mathematics and Theoretical Physics \\ Wilberforce Road \\ Cambridge, CB3 0WA, UK}
+\date{November 17, 2012}
+\opening{To Whom It May Concern,}
+%\enclosure[Attached]{curriculum vit\ae{}}     % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+\closing{Sincerely,}
+\makecenterplainlettletitle{Scientific Interest}
+
+I have very strong interest covering a broad area of research: 
+\begin{itemize}[parsep=0pt,partopsep=0pt,topsep=0pt,itemsep=0mm,itemindent=1mm]
+    \item{Genome analysis and annotation}
+    \item{Metagenomics}
+    \item{Evolution}
+    \item{Epigenetics}
+    \item{Functional genomics and gene networks}
+    \item{Software development and bioinformatics, including Text Mining, Machine Learning, and Statistics}
+\end{itemize}
+
+\addvspace{3mm}
+Being able to do the research related to "Disease-susceptibility prediction based on genetic variation" is the aim of my scientific career. The reason that I changed my career path to bioinformatics is due to my desire to help other people preventing or reducing the effect of diseases by knowing what diseases they might have in advance. Preferably, I'd like to do the research in an area close to finding disease causing as much as possible. Otherwise, considering my very strong background in software engineer compared to my biology background, I'd like to research or develop tools, methods, or algorithms, that can enhance the current bioinformatics techniques, or can be used as an integral part of a pipeline to find a disease causing.
+
+
+
+\MakeLetterClosing
+
+\end{document}
+
+

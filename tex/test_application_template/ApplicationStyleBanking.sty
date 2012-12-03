@@ -1,0 +1,77 @@
+%-------------------------------------------------------------------------------
+%                identification
+%-------------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ApplicationStyleBanking}[2012/11/15 v1.0 By Jessada and style: banking]
+
+
+%-------------------------------------------------------------------------------
+%                style definition
+%-------------------------------------------------------------------------------
+% fonts
+\renewcommand*{\sectionfont}{\Large\bfseries\upshape}
+\renewcommand*{\hintfont}{\bfseries}
+\renewcommand*{\subcontentfont}{\small}
+
+% styles
+\renewcommand*{\sectionstyle}[1]{{\sectionfont\textcolor{color1}{#1}}}
+\renewcommand*{\hintstyle}[1]{{\hintfont\textcolor{color0}{#1}}}
+\renewcommand*{\subcontentstyle}[1]{{\subcontentfont\textcolor{color0}{#1}}}
+
+% lengths
+\newlength{\maincolumnwidth}
+\newlength{\separatorcolumnwidth}
+\setlength{\separatorcolumnwidth}{0.025\textwidth}%
+\newlength{\doubleitemcolumnwidth}
+\newlength{\listitemsymbolwidth}
+\settowidth{\listitemsymbolwidth}{\listitemsymbol}
+\newlength{\listitemmaincolumnwidth}
+
+\renewcommand*{\recomputecvlengths}{%
+  % main lenghts
+    \setlength{\maincolumnwidth}{\textwidth}%
+  % listitem lengths
+    \setlength{\listitemmaincolumnwidth}{\maincolumnwidth-\listitemsymbolwidth}%
+  % doubleitem lengths
+    \setlength{\doubleitemcolumnwidth}{\maincolumnwidth-\separatorcolumnwidth}%
+    \setlength{\doubleitemcolumnwidth}{0.5\doubleitemcolumnwidth}%
+    \setlength{\parskip}{0\p@}
+}
+
+\renewcommand*{\section}[1]{%
+    \par\addvspace{1.5ex}%
+    \phantomsection{}% reset the anchor for hyperrefs
+    \addcontentsline{toc}{section}{#1}%
+    \strut\sectionstyle{#1}%
+    {\color{color1}\hrule}%
+\par\nobreak\addvspace{1ex}\@afterheading}
+
+\renewcommand*{\cvitem}[3][.25em]{%
+    \hintstyle{#2}: {#3}%
+    \par\addvspace{#1}
+}
+
+\renewcommand*{\cvdoubleitem}[5][.25em]{%
+    \begin{minipage}[t]{\doubleitemcolumnwidth}\hintstyle{#2}: #3\end{minipage}%
+    \hfill% fill of \separatorcolumnwidth
+    \begin{minipage}[t]{\doubleitemcolumnwidth}\ifthenelse{\equal{#4}{}}{}{\hintstyle{#4}: }#5\end{minipage}%
+    \par\addvspace{#1}
+}
+
+\renewcommand*{\cvlistitem}[2][.25em]{%
+  \listitemsymbol\begin{minipage}[t]{\listitemmaincolumnwidth}#2\end{minipage}%
+  \par\addvspace{#1}}
+
+\renewcommand*{\cventry}[6][.25em]{
+    \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}%
+	{\bfseries #2} & {\bfseries #3} \\%
+	  {\itshape #4} & {\itshape #5}\\%
+    \end{tabular*}%
+    \ifx&#6&%
+    \else{\\\vbox{\subcontentstyle{ #6}}}\fi%
+    %\else{\\\vbox{\small#6}}\fi%
+    \par\addvspace{#1}
+}
+
+\endinput
+

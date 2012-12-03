@@ -1,0 +1,87 @@
+%-------------------------------------------------------------------------------
+%                identification
+%-------------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{MyContent}[2012/11/15 v1.0 By Jessada]
+
+%-------------------------------------------------------------------------------
+%                content section
+%-------------------------------------------------------------------------------
+% personal information
+\newcommand*{\firstname}{Jessada}
+\newcommand*{\lastname}{Thutkawkorapin}
+\newcommand*{\email}{jessada.thutkawkorapin@scilifelab.se}
+\newcommand*{\phoneno}{+46 73 774 8990}
+\newcommand*{\nationality}{Thai}
+\newcommand*{\birthdate}{April 10, 1979}
+
+% professional experience
+\newarray\JobPositions
+\newarray\JobLocations
+\newarray\JobPeriods
+\newarray\JobCities
+\newarray\JobDescriptions
+
+\JobPositions(1)={Research Assistant}
+\JobPositions(2)={System Manager of IT Department \& IT Project Leader}
+\JobPositions(3)={Software Engineer \& Consultant}
+
+\JobLocations(1)={Department of Molecular Medicine and Surgery, Karolinska Institute}
+\JobLocations(2)={Thai Smart Card Co., Ltd.}
+\JobLocations(3)={NCR Corporation Co., Ltd.}
+
+\JobCities(1)={Stockholm}
+\JobCities(2)={Bangkok}
+\JobCities(3)={Bangkok}
+
+\JobPeriods(1)={2012--present}
+\JobPeriods(2)={2006--2009}
+\JobPeriods(3)={2001--2005}
+
+\JobDescriptions(1)={Enhancing the results from my thesis, and writing two manuscripts to publish the results}
+\JobDescriptions(2)={Managing and implementing VT System on Django framework to provide web services to gateway servers}
+\JobDescriptions(3)={Using SDLC model to gather requirement, analyse, design, develop, unit test and UAT Cheque Clearing System for HSBC(Singapore), HSBC(Hong Kong), and many other banks in South East Asia}
+
+% education 
+\newarray\EducationInstitutes
+\newarray\EducationCities
+\newarray\EducationDegrees
+\newarray\EducationPeriods
+
+\EducationInstitutes(1)={KTH Royal Institute of Technology}
+\EducationInstitutes(2)={Chulalongkorn University}
+
+\EducationCities(1)={Stockholm}
+\EducationCities(2)={Bangkok}
+
+\EducationDegrees(1)={MSc in Computational and Systems Biology}
+\EducationDegrees(2)={B.Eng. in Computer Engineering}
+
+\EducationPeriods(1)={2009--present (expected March 2013)}
+\EducationPeriods(2)={1997--2001}
+
+% referees
+\newarray\RefereeNames
+\newarray\RefereeAffiliations
+\newarray\RefereeEmails
+
+\RefereeNames(1)={Lars Arvestad}
+\RefereeNames(2)={Daniel Nilsson}
+
+\RefereeAffiliations(1)={PI, Karolinska Institutet Science Park, Stockholm}
+\RefereeAffiliations(2)={Clinical Scientist and Appointed Clinical Researcher, Karolinska University Hospital, Stockholm}
+
+\RefereeEmails(1)={lars.arvestad@scilifelab.se}
+\RefereeEmails(2)={daniel.nilsson@scilifelab.se}
+
+% master thesis
+\newcommand*{\MasterThesisTitle}{Disease gene candidate discovery by genome sequencing: improved variant filtering tools}
+\newcommand*{\MasterThesisSupervisor}{Daniel Nilsson}
+\newcommand*{\MasterThesisDescription}{Variant filtering technique still has much room for improvement. This thesis proposes tools to build background variation frequency database to aid filtering known variants. Moreover, it also proposes a method to increase prediction accuracy by using machine learning technique to combine the results from effect predictors, SIFT, polyphen 2, GERP++, LRT, Phylop, and Mutation Taster.}
+
+%\cvitem{Title}{
+%\cvlistitem{\cvitem{Task1}{Develop tools to build background variation frequency database from VCF files}}
+%\cvlistitem{\cvitem{Task2}{Research and develop consensus predictor using machine learning technique to combine result from effect predictors, SIFT, polyphen 2, GERP++, LRT, Phylop, and Mutation Taster.}
+
+\endinput
+
