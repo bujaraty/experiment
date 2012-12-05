@@ -8,9 +8,9 @@ sh/obsolete/
 *.rm
 *.ps
 *.out
-python/test_saveloadtxt/test_packaging/MyTowel/build
+python/test_packaging/MyTowel/build
 *.pyc
 *egg-info*
-python/test_saveloadtxt/test_packaging/MyTowel/MANIFEST
-python/test_saveloadtxt/test_packaging/MyTowel/dist
+python/test_packaging/MyTowel/MANIFEST
+python/test_packaging/MyTowel/dist
 

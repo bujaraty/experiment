@@ -12,3 +12,9 @@ print table
 c=np.array([[4, 3], [2, 1]])
 print c
 
+#np.random.seed(seed=np.array([[4, 3], [2, 1], [2, 1]]))
+np.random.seed(20)
+np.random.seed()
+my_ran=np.random.rand(2,3)
+print my_ran
+
