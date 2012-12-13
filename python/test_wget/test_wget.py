@@ -12,10 +12,9 @@ print 'current working dir: ', os.getcwd()
 
 args = []
 args.append('wget')
-args.append('-q')
 args.append('-N')
-args.append('http://www.openbioinformatics.org/annovar/download/hg19_ljb_lrt.txt.idx.gz')
-subprocess.call(args)
+args.append('http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database')
+print subprocess.call(args)
 
 
 
@@ -27,7 +26,7 @@ args.append('wget')
 args.append('-q')
 args.append('-N')
 args.append('http://www.openbioinformatics.org/annovar/download/hg19_ljb_sift.txt.idx.gz')
-subprocess.call(args)
+print subprocess.call(args)
 #args = []
 #args.append('wget')
 #args.append('-N')
