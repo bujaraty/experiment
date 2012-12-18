@@ -3,7 +3,8 @@
 import subprocess;
 
 print 'before'
-subprocess.Popen('./test_subprocess.sh | head -3 > ./output.txt', shell=True)
+p = subprocess.Popen('./test_subprocess.sh | hea -3 > ./output.txt', shell=True)
+print p.wait()
 #args = []
 #args.append('./test_subprocess.sh')
 #args.append('>')
