@@ -1,7 +1,7 @@
 CHANGES.txt
 LICENSE.txt
-MANIFEST.in
 README.txt
+setup.py
 MyTowel.egg-info/PKG-INFO
 MyTowel.egg-info/SOURCES.txt
 MyTowel.egg-info/dependency_links.txt
@@ -10,6 +10,8 @@ MyTowel.egg-info/top_level.txt
 bin/test_bin.py
 docs/FAQs.txt
 mytowel/__init__.py
+mytowel/app.py
 mytowel/build_eps.py
 mytowel/test/__init__.py
+mytowel/test/mytest.py
 mytowel/test/test_build_eps.py
