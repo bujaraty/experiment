@@ -1,0 +1,11 @@
+#/bin/bash
+
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+data_dir=$script_dir/../data
+out_dir=$script_dir/../out
+
+
+plink --file $data_dir/test_00 --hap-assoc --hap-window 3,5 --allow-no-sex --out $out_dir/test_00
+
+
+

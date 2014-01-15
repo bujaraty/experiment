@@ -1,0 +1,11 @@
+#/bin/bash
+
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+data_dir=$script_dir/../data
+out_dir=$script_dir/../out
+
+
+plink --file $data_dir/my_AL_case_ctrls_03 --assoc --allow-no-sex --out $out_dir/AL_case_ctrls_03
+
+
+

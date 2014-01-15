@@ -5,7 +5,8 @@
 #from xlrd.timemachine import REPR
 import xlrd
 workbook = xlrd.open_workbook('namesdemo.xls')
-worksheet = workbook.sheet_by_name('Sheet3')
+worksheet = workbook.sheet_by_index(2)
+#worksheet = workbook.sheet_by_name('Sheet3')
 num_rows = worksheet.nrows - 1
 num_cells = worksheet.ncols - 1
 curr_row = -1
@@ -20,3 +21,7 @@ while curr_row < num_rows:
         cell_type = worksheet.cell_type(curr_row, curr_cell)
         cell_value = worksheet.cell_value(curr_row, curr_cell)
         print '', cell_type, ':', cell_value
+
+for ws_name in workbook.sheet_names():
+    print ws_name
+print workbook.sheet_by_index(2)
